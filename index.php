@@ -5,7 +5,18 @@ Stampare a schermo il paragrafo e la sua lunghezza.
 
 
 $text = 'Inizia con la lettera “c” e finisce con la “o”, è duro e peloso. Cos’è? Il Cocco!';
-$lunghezzaTesto = strlen($text);
+$lunghezza_testo = strlen($text);
+
+$parola_inserita = $_GET['parola_inserita'];
+
+$testo_modificato = str_replace ($parola_inserita,'***',$text);
+
+// $testo_modificato = str_replace( 'co', '***', $text );
+
+$lunghezza_testomodificato = strlen ($testo_modificato);
+
+
+
 ?>
 
 
@@ -25,7 +36,13 @@ con tre asterischi (***) tutte le occorrenze della parola da censurare. -->
 </head>
 <body>
    <h1><?php echo $text; ?></h1>
-   <h2> il testo è lungo :<?php echo $lunghezzaTesto; ?> </h2>
+   <h3> il testo è lungo :<?php echo $lunghezza_testo; ?> </h3>
+   <h3> la parola inserita è :<?php echo $parola_inserita; ?></h3>
+
+   <h2> il nuovo testo è : <?php echo $testo_modificato; ?> </h2>
+   <h3> il testo ora è lungo :<?php echo $lunghezza_testomodificato; ?></h3>
+   
+
 </body>
 </html>
 
